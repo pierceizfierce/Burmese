@@ -2,7 +2,7 @@ from pyVim.connect import SmartConnect, Disconnect
 from pyVmomi import vim
 
 # Set your ESXi host, username, and password
-host = "10.0.0.231"
+host = "10.0.0.241"
 username = "root"
 password = "QEZCczeq08^$qaz"
 
@@ -38,10 +38,10 @@ def create_vm(vm_name, datacenter_name, datastore_name, cluster_name, network_na
 
 # Call the function to create a VM
 create_vm(vm_name="DamorisPC",
-          datacenter_name="MyDatacenter",
-          datastore_name="MyDatastore",
-          cluster_name="MyCluster",
-          network_name="MyNetwork")
+          datacenter_name="Lab",
+          datastore_name=".241 NAS",
+          cluster_name="Lab Cluster",
+          network_name="VM Network")
 
 # Disconnect from the ESXi host
 Disconnect(si)

@@ -5,8 +5,8 @@ name = input("what is your name? ") #the "input()" function will ask for somethi
 print ("Hi " + name) #you can only use this (+) syntax with strings
 color = input("what is your favorite color? ")
 print(name + "'s favorite color is " + color)
-want_to_play = input ("Do you want to play guess the number?")
-if want_to_play == ("yes"):
+want_to_play = input("Do you want to play guess the number?")
+if want_to_play == "yes":
     import random
     import math
 
