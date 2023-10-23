@@ -7,7 +7,7 @@ from pathlib import Path
 
 #Realtive Path: a path starting from the current directory in python
 
-# path = Path("ecommerce")
+# path = Path("Ecommerce")
 # path.exists()
 #
 # path = Path("emails")
