@@ -31,3 +31,5 @@ point1.y = 20 #these are attributes.. attributes are variables that belong to a 
 point2.x = 1
 point2.y = 2
 print(point2.x)
+
+#test
