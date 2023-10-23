@@ -1,18 +1,18 @@
 # # # Functions
 # # #are "containers" that do a specific task
 # #
-# # print()
-# # input()
-# #
+# print()
+# input()
 #
-# def greet_user(): #always used underline to separate words, lowercase, and be descriptive
-#     print("Hi there!")
-#     print("welcome aboard!")
-#
-#
-# print("Start")
-# greet_user() #the defined function goes above the call for the function. this is the call, above is the define
-# print("finish")
+
+def greet_user(): #always used underline to separate words, lowercase, and be descriptive
+    print("Hi there!")
+    print("welcome aboard!")
+
+
+print("Start")
+greet_user() #the defined function goes above the call for the function. this is the call, above is the define
+print("finish")
 
 
 ########################################################################################################################

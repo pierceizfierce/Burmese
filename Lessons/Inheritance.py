@@ -1,14 +1,13 @@
 #Inheritance
 #A mechanism for resuing code in programming that supports inheritance
 
-#
-# class Dog:
-#     def walk(self):
-#         print("walk")
-#
-# class Cat:
-#     def walk(self):
-#         print("walk")
+class Dog:
+    def walk(self):
+        print("walk")
+
+class Cat:
+    def walk(self):
+        print("walk")
 #the above is bad and not good for long programs... D.R.Y. DONT REPEAT YOURSELF
 # Do not define something twice, do this:
 
