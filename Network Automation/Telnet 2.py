@@ -1,13 +1,13 @@
 from __future__ import print_function
-from netlib import *
 from __future__ import print_function
 
+from netlib import *
 from netlib import *
 
 # system parameters
 switch_username = 'admin' # edit to reflect
-switch_telnet_password = 'C1sc0312' # edit to reflect
-switch_enable_password = 'C1sc0312'  # edit to reflect
+switch_telnet_password = 'C1sc0123' # edit to reflect
+switch_enable_password = 'C1sc0123'  # edit to reflect
 ftp_username = 'user'  # edit to reflect
 ftp_password = 'password'  # edit to reflect
 configuration_server = "10.0.0.100"  # edit to reflect
