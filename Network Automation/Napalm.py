@@ -13,6 +13,7 @@ device.open()
 config_commands = [
     'command 1',
     'command 2',
+    'command 3',
     # Add more commands as needed
 ]
 
