@@ -35,7 +35,7 @@ def square(number):
 ########################################################################################################################
 
 #Create reusable function
-ref. emoji converter tutorial
+# ref. emoji converter tutorial
 #Emoji Converter
 #
 message = input(">")

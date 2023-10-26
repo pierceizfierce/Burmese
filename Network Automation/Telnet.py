@@ -1,6 +1,8 @@
-import telnetlib3
 import asyncio
 import logging
+
+import telnetlib3
+
 
 async def configure_cisco_router():
     # Replace these with your router's details
@@ -35,10 +37,10 @@ if __name__ == "__main__":
     asyncio.run(configure_cisco_router())
 
 async def configure_cisco_router():
-    try:
+    # try:
         # Your code here
         # ...
-    except Exception as e:
+    # except Exception as e:
         # Log the exception
             logging.error(f"An error occurred: {e}")
 
