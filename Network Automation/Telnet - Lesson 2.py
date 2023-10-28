@@ -1,11 +1,12 @@
 # For some reason it hangs in PyCharm but works if ran outside this IDE
-# This is for a router, use to create baseline template
-# Configure basics: user, enable pass, line vty, and ip on int
+# This is for a switch, use to create baseline template
+# Configure basics: user, enable pass, line vty, and ip on vlan
+
 
 import getpass
 import telnetlib
 
-HOST = "10.0.0.150"
+HOST = "10.0.0.100"
 user = input("Enter Username: ")
 password = getpass.getpass()
 
@@ -21,13 +22,13 @@ if password:
 tn.write(b"enable\n")
 tn.write(b"pierce1\n") # DO NOT HARDCODE PASSWORD
 tn.write(b"conf t\n")
-tn.write(b"int loop 0\n")
-tn.write(b"ip add 1.1.1.1 255.255.255.255\n")
-tn.write(b"no shut\n")
-tn.write(b"ip add 2.2.2.2 255.255.255.255\n")
+tn.write(b"vlan 2\n")
+tn.write(b"name test vlan\n")
 tn.write(b"exit\n")
-# tn.write(b"router ospf 1")
-# tn.write(b"network 0.0.0.0 255.255.255.255 area 0\n")
+tn.write(b"int vlan2\n")
+tn.write(b"ip add 10.0.1.100 255.255.255.0\n")
+tn.write(b"no shut\n")
+tn.write(b"exit\n")
 tn.write(b"exit\n")
 
 #Save Run
