@@ -1,0 +1,58 @@
+!
+hostname Switch1
+!
+username pierce privilege 15 password 0 pierce1
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface GigabitEthernet0/0
+ negotiation auto
+ spanning-tree cost 2000
+!
+interface GigabitEthernet0/1
+ negotiation auto
+ spanning-tree cost 2001
+!
+interface GigabitEthernet0/2
+ negotiation auto
+ spanning-tree cost 2002
+!
+interface GigabitEthernet0/3
+ negotiation auto
+ spanning-tree cost 2003
+!
+interface GigabitEthernet1/0
+ negotiation auto
+ spanning-tree cost 100
+!
+interface GigabitEthernet1/1
+ negotiation auto
+ spanning-tree cost 1000
+!
+interface GigabitEthernet1/2
+ negotiation auto
+!
+interface GigabitEthernet1/3
+ negotiation auto
+!
+interface Vlan1
+ ip address 10.0.0.101 255.255.255.0
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ logging synchronous
+ login local
+ transport input all
+!
+do wr me
+!
+end

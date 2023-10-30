@@ -5,11 +5,11 @@
 import getpass
 import telnetlib
 
-#HOST = "localhost"
+HOST = "localhost"
 user = input("Enter Username: ")
 password = getpass.getpass()
 
-f = open(r"SW_List.txt")
+f = open(r"Z:\damori.pierce\PythonProjects\Burmese\Network Automation\Lesson 4\SW_List.txt")
 
 for IP in f:
 

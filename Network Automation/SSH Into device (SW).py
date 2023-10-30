@@ -3,16 +3,21 @@ import time
 import paramiko
 
 # Define switch details
-switch_ip = 'your_switch_ip'
-switch_username = 'your_username'
-switch_password = 'your_password'
+switch_ip = input(r'what is your switch ip address: ')
+switch_username = input(r'WHat is your username: ')
+switch_password = input(r'What is your password: ')
+
+#Variables
+ip = switch_ip
+u = switch_username
+p = switch_password
 
 # SSH into the switch
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 try:
-    ssh.connect(switch_ip, username=switch_username, password=switch_password)
+    ssh.connect(ip, username=u, password=p)
     print("SSH connection established.")
 except paramiko.AuthenticationException:
     print("Authentication failed. Please check your credentials.")
