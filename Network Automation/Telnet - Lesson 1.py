@@ -5,7 +5,7 @@
 import getpass
 import telnetlib
 
-HOST = "10.0.0.150"
+HOST = "10.0.0.102"
 user = input("Enter Username: ")
 password = getpass.getpass()
 
@@ -18,8 +18,8 @@ if password:
     tn.read_until(b"Password: ")
     tn.write(password.encode('ascii') + b"\n")
 
-tn.write(b"enable\n")
-tn.write(b"pierce1\n") # DO NOT HARDCODE PASSWORD
+# tn.write(b"enable\n")
+# tn.write(b"pierce1\n") # DO NOT HARDCODE PASSWORD
 tn.write(b"conf t\n")
 tn.write(b"int loop 0\n")
 tn.write(b"ip add 1.1.1.1 255.255.255.255\n")
