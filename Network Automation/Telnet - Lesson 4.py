@@ -9,7 +9,7 @@ HOST = "localhost"
 user = input("Enter Username: ")
 password = getpass.getpass()
 
-f = open(r"Z:\damori.pierce\PythonProjects\Burmese\Network Automation\Lesson 4\SW_List.txt")
+f = open(r"source_lists/SW_List.txt")
 
 for IP in f:
 
