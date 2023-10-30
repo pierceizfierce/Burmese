@@ -1,5 +1,5 @@
 !
-hostname Switch1
+hostname Switch0
 !
 username pierce privilege 15 password 0 pierce1
 !
@@ -7,7 +7,7 @@ spanning-tree mode pvst
 spanning-tree extend system-id
 !
 interface Loopback0
- ip address 1.1.1.1 255.255.255.255
+ ip address 10.10.10.10 255.255.255.255
 !
 interface GigabitEthernet0/0
  negotiation auto
@@ -40,7 +40,8 @@ interface GigabitEthernet1/3
  negotiation auto
 !
 interface Vlan1
- ip address 10.0.0.101 255.255.255.0
+ ip address 10.0.0.100 255.255.255.0
+ no shut
 !
 ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
 ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
@@ -56,3 +57,4 @@ line vty 0 4
 do wr me
 !
 end
+!
