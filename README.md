@@ -89,8 +89,3 @@ Test your changes to ensure they work as expected.
 Create a pull request to the main branch of this repository.
 
 Ensure your pull request includes a clear description of the changes you made and why they are valuable.
-
-License
-This Python project is licensed under the MIT License. Please review the license before using or contributing to this project.
-
-Thank you for using and contributing to our Python project! If you have questions or encounter issues, please open a GitHub issue.
