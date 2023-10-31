@@ -9,7 +9,7 @@ import telnetlib
 user = input("Enter Username: ")
 password = getpass.getpass()
 
-f = open(r"Z:\damori.pierce\PythonProjects\Burmese\Network_Automation\source_lists\SW_List.txt")
+f = open(r"C:\Users\dpierce\PycharmProjects\Burmese\Network_Automation\source_lists\SW_List.txt")
 
 for IP in f:
 
@@ -27,6 +27,12 @@ for IP in f:
     tn.write(b"terminal length 0\n")  # so you don't have to hit the space-bar
     tn.write(b"show run\n")
     tn.write(b"exit\n")
+
+# Enable SSH
+    tn.write(b"ip domain-name damori.com\n")
+    tn.write(b"crypto key generate rsa\n")
+    tn.write(b"1024\n")
+    tn.write(b"end\n")
 
 # Save config to a file
     readoutput = tn.read_all()
