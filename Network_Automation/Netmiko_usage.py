@@ -2,7 +2,7 @@ import pandas as pd
 from netmiko import ConnectHandler
 
 # Replace 'your_device_info.xlsx' with the actual filename
-df = pd.read_excel('your_device_info.xlsx')# Placeholder .xlsx
+df = pd.read_excel('your_device_info.xlsx')  # Placeholder .xlsx
 
 for index, row in df.iterrows():
     device_info = {
@@ -19,7 +19,7 @@ for index, row in df.iterrows():
     # Send configuration commands
     config_commands = [
         'interface GigabitEthernet0/0',
-        'ip address 192.168.1.2 255.255.255.0',# Placeholder cmds
+        'ip address 192.168.1.2 255.255.255.0',  # Placeholder cmds
     ]
     connection.send_config_set(config_commands)
 
