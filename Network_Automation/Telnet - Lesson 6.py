@@ -9,7 +9,7 @@ import telnetlib
 user = input("Enter Username: ")
 password = getpass.getpass()
 
-f = open(rb"Z:\damori.pierce\PythonProjects\Burmese\Network_Automation\source_lists\SW_List.txt")
+f = open(r"Z:\damori.pierce\PythonProjects\Burmese\Network_Automation\source_lists\SW_List.txt")
 
 for IP in f:
 
@@ -30,7 +30,7 @@ for IP in f:
 
 # Save config to a file
     readoutput = tn.read_all()
-    saveoutput = open("switch " + HOST)
+    saveoutput = open("switch " + HOST, "w")
     saveoutput.write(readoutput.decode('ascii'))
     saveoutput.write("\n")
     saveoutput.close()
