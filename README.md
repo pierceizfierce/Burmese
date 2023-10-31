@@ -41,7 +41,7 @@ Getting Started
 Prerequisites
 Before using or contributing to this Python project, please make sure you have the following prerequisites installed:
 
-Python: This project is developed for Python [specify the Python version]. You can download Python from the official Python website.
+Python: This project is developed for Python 3.11. You can download Python from the official Python website.
 Installation
 Clone this repository to your local machine:
 
