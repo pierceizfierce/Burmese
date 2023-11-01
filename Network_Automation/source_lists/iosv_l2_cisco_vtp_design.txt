@@ -1,0 +1,85 @@
+vtp mode transparent
+spanning-tree mode rapid-pvst
+udld enable
+errdisable recovery cause all
+port-channel load-balance src-dst-ip
+ip name-server 9.9.9.9
+no ip http server
+ip http secure-server
+
+snmp-server community python1 RO
+snmp-server community python2 RW
+
+ntp server 129.6.15.28
+ntp update-calendar
+
+clock timezone PST -6
+clock summer-time PDT recurring
+service timestamps debug datetime msec localtime
+service timestamps log datetime msec localtime
+
+vlan 2
+ name Mgmt vlan
+vlan 3
+  name Dev vlan
+vlan 4
+  name Finance vlan
+vlan 5
+  name HR vlan
+vlan 6
+  name Infra vlan
+vlan 7
+  name CEO vlan
+vlan 8
+  name VPs vlan
+vlan 9
+  name Logistics vlan
+vlan 10
+  name Remote vlan
+vlan 11
+  name test vlan
+vlan 12
+ name Data
+vlan 13
+ name Voice
+vlan 14
+ name End-Users
+
+interface vlan 1
+ description In-band Management
+
+ip default-gateway 10.0.0.1
+ip dhcp snooping vlan 2-30
+
+no ip dhcp snooping information option
+ip dhcp snooping
+ip arp inspection vlan 2-30
+spanning-tree portfast bpduguard default
+ipv6 nd raguard policy HOST_POLICY
+ device-role host
+
+interface range GigabitEthernet 2/0-3
+ switchport access vlan 2
+ switchport voice vlan 13
+ switchport host
+ switchport port-security maximum 2
+ switchport port-security
+ switchport port-security aging time 2
+ switchport port-security aging type inactivity
+ switchport port-security violation restrict
+ ip arp inspection limit rate 100
+ ip dhcp snooping limit rate 100
+ ip verify source
+
+ interface range GigabitEthernet 3/0-2
+ switchport access vlan 3
+ switchport voice vlan 13
+ switchport host
+ switchport port-security maximum 2
+ switchport port-security
+ switchport port-security aging time 2
+ switchport port-security aging type inactivity
+ switchport port-security violation restrict
+ ip arp inspection limit rate 100
+ ip dhcp snooping limit rate 100
+ ip verify source
