@@ -59,6 +59,7 @@ ipv6 nd raguard policy HOST_POLICY
  device-role host
 
 interface range GigabitEthernet 2/0-3
+ switchport mode access
  switchport access vlan 2
  switchport voice vlan 13
  switchport host
@@ -72,6 +73,7 @@ interface range GigabitEthernet 2/0-3
  ip verify source
 
  interface range GigabitEthernet 3/0-2
+ switchport mode access
  switchport access vlan 3
  switchport voice vlan 13
  switchport host
