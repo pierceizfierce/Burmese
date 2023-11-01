@@ -1,5 +1,4 @@
 import time
-
 import paramiko
 
 # Define switch details
