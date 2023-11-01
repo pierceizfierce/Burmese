@@ -9,7 +9,7 @@ import telnetlib
 user = input("Enter Username: ")
 password = getpass.getpass()
 
-f = open(r"C:\Users\dpierce\PycharmProjects\Burmese\Network_Automation\source_lists\SW_List.txt")
+f = open(r"/Network_Automation/source_lists/sw_list.txt")
 
 for IP in f:
 
