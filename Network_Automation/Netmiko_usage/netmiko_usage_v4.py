@@ -42,7 +42,7 @@ iosv5_l2 = {
 }
 
 sw_config = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(sw_config, r'C:\Users\dpierce\PycharmProjects\Burmese\Network_Automation\source_lists\iosv_l2_cisco_vtp_design.txt')
+filename = os.path.join(sw_config, r'C:\Users\dpierce\PycharmProjects\Burmese\Network_Automation\source_lists\iosv_l2_cisco_access_switch_design.txt')
 
 with open(filename) as f:
     lines = f.read().splitlines()
