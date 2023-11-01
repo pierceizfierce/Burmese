@@ -74,7 +74,7 @@ interface range GigabitEthernet 2/0-3
  ip arp inspection limit rate 100
  ip dhcp snooping limit rate 100
  ip verify source
- shutdown
+ shut
 
  interface range GigabitEthernet 3/0-2
  switchport mode access
@@ -89,7 +89,7 @@ interface range GigabitEthernet 2/0-3
  ip arp inspection limit rate 100
  ip dhcp snooping limit rate 100
  ip verify source
- shutdown
+ shut
 
 !trunk configuration
 int range g0/1 - 3
