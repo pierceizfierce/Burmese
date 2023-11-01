@@ -37,4 +37,3 @@ for devices in all_devices:
         config_commands = ['vlan ' + str(n), 'name Python_VLAN ' + str(n)]
         output = net_connect.send_config_set(config_commands)
         print(output)
-        
