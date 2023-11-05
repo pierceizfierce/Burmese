@@ -15,8 +15,10 @@ snmp-server community python2 RW
 ntp server 129.6.15.28
 ntp update-calendar
 
-clock timezone PST -6
-clock summer-time PDT recurring
+
+
+clock timezone EST -5
+clock summer-time EDT recurring 2 sunday March 00:00 1 sunday November 00:00
 service timestamps debug datetime msec localtime
 service timestamps log datetime msec localtime
 

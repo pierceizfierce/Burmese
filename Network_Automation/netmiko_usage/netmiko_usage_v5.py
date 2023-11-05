@@ -1,12 +1,14 @@
 import os
+import json
 from netmiko import ConnectHandler
 
 # define switches to configure
+
 iosv0_l2 = {
     'device_type': 'cisco_ios',
     'ip': '10.0.0.100',
     'username': 'pierce',
-    'password': 'pierce1',  # DO NOT HARDCODE PASSWORDS
+    'password': 'password'  # DO NOT HARDCODE PASSWORDS
 }
 
 iosv1_l2 = {
@@ -47,10 +49,9 @@ sw_config = os.path.dirname(os.path.abspath(__file__))
 filename_core = os.path.join(sw_config, r'C:\Users\dpierce\PycharmProjects\Burmese\Network_Automation\source_lists\iosv_l2_cisco_core_switch_design.txt')
 filename_access = os.path.join(sw_config, r'C:\Users\dpierce\PycharmProjects\Burmese\Network_Automation\source_lists\iosv_l2_cisco_access_switch_design.txt')
 
-
 with open(filename_core) as f:
     lines = f.read().splitlines()
-print(lines)
+print(json.dumps(lines, sort_keys=True, indent=4))
 
 # define targets
 core_devices = [iosv1_l2, iosv2_l2]
@@ -58,11 +59,11 @@ core_devices = [iosv1_l2, iosv2_l2]
 for devices in core_devices:
     net_connect = ConnectHandler(**devices)
     output = net_connect.send_config_set(lines)
-    print(output)
+    print(json.dumps(output, sort_keys=True, indent=4))
 
 with open(filename_access) as f:
     lines = f.read().splitlines()
-print(lines)
+print(json.dumps(lines, sort_keys=True, indent=4))
 
 # define targets
 access_devices = [iosv3_l2, iosv4_l2, iosv5_l2]
@@ -70,4 +71,4 @@ access_devices = [iosv3_l2, iosv4_l2, iosv5_l2]
 for devices in access_devices:
     net_connect = ConnectHandler(**devices)
     output = net_connect.send_config_set(lines)
-    print(output)
+    print(json.dumps(output, sort_keys=True, indent=4))

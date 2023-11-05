@@ -15,8 +15,8 @@ snmp-server community python2 RW
 ntp server 129.6.15.28
 ntp update-calendar
 
-clock timezone PST -6
-clock summer-time PDT recurring
+clock timezone EST -5
+clock summer-time EDT recurring 2 sunday March 00:00 1 sunday November 00:00
 service timestamps debug datetime msec localtime
 service timestamps log datetime msec localtime
 
@@ -46,6 +46,8 @@ vlan 13
  name Voice
 vlan 14
  name End-Users
+vlan 15
+ name API-Zone
 
 interface vlan 1
  description In-band Management
@@ -61,6 +63,19 @@ ipv6 nd raguard policy HOST_POLICY
  device-role host
 
 !interface configuration
+
+interface Port-channel1
+  switchport mode trunk
+  switchport trunk encapsulation dot1q
+  channel-protocol lacp
+  channel-group 1 mode active
+
+interface GigabitEthernet0/1
+  channel-group 1 mode active
+  exit
+interface GigabitEthernet1/1
+  channel-group 1 mode active
+
 interface range GigabitEthernet 2/0-3
  switchport mode access
  switchport access vlan 2
