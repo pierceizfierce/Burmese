@@ -7,8 +7,8 @@ df = pd.read_excel('servers.xlsx') # Location of server .xlsx
 
 for index, row in df.iterrows():
     server_ip = row['IP']
-    username = row['Username'] # replace this with a service account
-    password = row['Password'] # replace this with API or PSK
+    username = row['Username'] # replace this with a service account in spreadsheet and server(s)
+    password = row['Password'] # replace this with API or PSK on server(s)
     os_type = row['OS']
 
 # Perform actions based on the OS type (Linux or Windows)
@@ -16,7 +16,6 @@ for index, row in df.iterrows():
 # Use Paramiko for Linux servers
     elif os_type.lower() == 'windows':
 # Use pywinrm for Windows servers
-
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
