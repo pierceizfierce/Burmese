@@ -1,7 +1,7 @@
 # SSH to Multiple Devices from devices file
 from netmiko import ConnectHandler
 
-with open('source_lists/devices.txt') as routers:
+with open('../source_lists/devices.txt') as routers:
     for IP in routers:
         Router = {
             'device_type': 'cisco_ios',
