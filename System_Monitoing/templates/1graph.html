@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PC Monitoring Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>PC Monitoring Dashboard</h1>
+
+    <div style="width: 50%;">
+        <h2>CPU Utilization</h2>
+        <canvas id="cpuChart"></canvas>
+    </div>
+
+    <h2>Memory Utilization</h2>
+    <p>{{ memory_percent }}%</p>
+
+    <h2>GPU Utilization</h2>
+    <p>{{ gpu_percent }}%</p>
+
+    <h2>Network Utilization</h2>
+    <p>Bytes Sent: {{ bytes_sent }}</p>
+    <p>Bytes Received: {{ bytes_recv }}</p>
+
+    <script>
+        // JavaScript to render CPU utilization chart using Chart.js
+        var ctx = document.getElementById('cpuChart').getContext('2d');
+        var cpuChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'CPU Utilization (%)',
+                    data: [],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        function updateChartData() {
+            fetch('/cpu_data')
+                .then(response => response.json())
+                .then(data => {
+                    cpuChart.data.labels.push('');
+                    cpuChart.data.datasets[0].data.push(data.cpu_percent);
+                    cpuChart.update();
+                });
+        }
+
+        // Update chart data every 2 seconds
+        setInterval(updateChartData, 2000);
+    </script>
+</body>
+</html>

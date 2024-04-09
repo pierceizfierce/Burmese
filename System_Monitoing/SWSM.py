@@ -34,18 +34,19 @@ def generate_cpu_plot():
 
 # Route for the home page
 @app.route('/')
+# Route for the home page
+@app.route('/')
 def home():
-    return render_template('index.html',
+    return render_template('1graph.html',
                            memory_percent=get_memory_percent(),
                            gpu_percent=get_gpu_percent(),
                            bytes_sent=get_network_stats()[0],
                            bytes_recv=get_network_stats()[1])
 
-# Route to stream CPU utilization plot
-@app.route('/cpu_plot.png')
-def stream_cpu_plot():
-    generate_cpu_plot()
-    return send_image('cpu_plot.png')
+# Route to provide CPU utilization data as JSON
+@app.route('/cpu_data')
+def cpu_data():
+    return {'cpu_percent': get_cpu_percent()}
 
 # Function to send an image
 def send_image(filename):
