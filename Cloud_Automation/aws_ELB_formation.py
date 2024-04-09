@@ -16,6 +16,7 @@ elb = boto3.client('elb', aws_access_key_id=aws_access_key_id,
                    aws_secret_access_key=aws_secret_access_key,
                    region_name=region_name)
 
+
 # Define a function to create an ELB and attach EC2 instances
 def create_elb_with_instances(elb_name, instance_ids):
     # Create ELB
@@ -24,8 +25,8 @@ def create_elb_with_instances(elb_name, instance_ids):
         Listeners=[
             {
                 'Protocol': 'HTTP',
-                'LoadBalancerPort': 80,
-                'InstancePort': 80
+                'LoadBalancerPort': 80,  # change  port as needed
+                'InstancePort': 80  # change  port as needed
             },
         ],
         AvailabilityZones=[
@@ -42,6 +43,7 @@ def create_elb_with_instances(elb_name, instance_ids):
     )
 
     return elb_response
+
 
 # Configuration for creating ELB and attaching instances
 elb_name = 'my-load-balancer'
